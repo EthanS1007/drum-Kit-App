@@ -70,7 +70,14 @@ function playSound(e) {
  let div = ` div[data-key="${e.keyCode}"]`
  return playSound()
 }
+const keys = Array.from(document.querySelectorAll('.key'));
 
+keys.forEach(function(k) {
+k.eventListener("transitionend", removeTransition)
+});
+
+window.addEventListener("keydown")
+removeTransition()
 </script>
 
 
